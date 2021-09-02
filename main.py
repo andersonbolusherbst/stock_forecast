@@ -10,6 +10,7 @@ START ="2015-01-01"
 TODAY = date.today().strftime("%Y-%m-%d")
 
 st.title("Stock Prediction App")
+st.subheader("This is an example of Time-Series Forecasting")
 
 stocks = ("AAPL","GOOGL","TSLA","GME","NFLX","ARKK","NDAQ","SPX","BTC-USD","ETH-USD","ADA-USD","CL=F") #Could swap IEX stock info here
 selected_stock = st.selectbox("Select dataset for prediction", stocks)
@@ -53,10 +54,10 @@ forecast = m.predict(future)
 st.subheader('Forecast data')
 st.write(forecast.tail())
 
-st.write('forecast data')
+st.subheader('The Forecast)
 fig1 =plot_plotly(m, forecast)
 st.plotly_chart(fig1)
 
-st.write('forecast components')
+st.subheader('Forecast Components')
 fig2=m.plot_components(forecast)
 st.write(fig2)
